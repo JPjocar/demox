@@ -2,10 +2,10 @@ name: Spring CI
 on:
   push:
     branches:
-      - backend
+      - main
   pull_request:
     branches:
-      - backend
+      - main
 jobs:
   create-buid-test:
     runs-on: ubuntu-latest
@@ -34,6 +34,6 @@ jobs:
       - name: Ejecutar maven
         run: mvn -B clean verify
         env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/test
-          SPRING_DATASOURCE_USERNAME: test
-          SPRING_DATASOURCE_PASSWORD: test
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/testdb
+          SPRING_DATASOURCE_USERNAME: testuser
+          SPRING_DATASOURCE_PASSWORD: testpassword
